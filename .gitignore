@@ -1,0 +1,10 @@
+/task1/target/
+/task3/target
+*.log
+
+### IntelliJ IDEA ###
+/task1/.idea/
+/task3/.idea/
+/.idea
+*.iws
+*.iml

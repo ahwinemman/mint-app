@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mint Simple App</title>
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+<div>
+
+    <form action="/">
+    <label for="card-number">Card Number:</label>
+    <input type="text" id="card-number" name="card-number" placeholder="Input the first eight digits of your card">
+    <button type="button" onclick="getCardDetails()" class="btn btn-primary">
+        Get Card Details
+    </button>
+    </form>
+
+</div>
+
+<div>
+    <p id="info-div"></p>
+</div>
+
+<div>
+    <label for="start">Card Number:</label>
+    <input type="text" id="start" name="start" placeholder="Input page start">
+    <label for="limit">Card Number:</label>
+    <input type="text" id="limit" name="limit" placeholder="Input page limit">
+
+    <button type="button" onclick="getNumberOfHits()" class="btn btn-primary">
+        Get Number of Hits
+    </button>
+</div>
+
+
+<div>
+    <p id="hit-info-div"></p>
+</div>
+
+</body>
+</html>

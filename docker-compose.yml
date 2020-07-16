@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  task-1:
+    build:
+      context: ../task1
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - zoo-keeper
+
+  task-3:
+    build:
+      context: ../task3
+      dockerfile: ./Dockerfile
+    ports:
+      - 9000:9000
+    environment:
+      - SERVICE_BASE_PATH=http://127.0.0.1:8080
+    depends_on:
+      - task-1
+
+  zoo-keeper:
+    image: zookeeper:latest
+    restart: always
+    hostname: zoo-keeper
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=server1IP:2888:3888 server.2=0.0.0.0:2888:3888 server.3=server3IP:2888:3888
